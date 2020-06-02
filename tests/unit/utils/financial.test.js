@@ -2,7 +2,7 @@ const {getCommission, financialCeiling} = require('../../../utils/financial');
 
 describe('financial functions', () => {
 
-    it('counts commissions by amount and commission', () => {
+    it('counts commissions by amount and commission percents', () => {
         const commissionPercent = 0.5;
         const amount = 200;
         const expectedData = 1;
