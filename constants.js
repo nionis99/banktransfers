@@ -1,18 +1,12 @@
 class Constants {
-    static DATE_FORMAT = "YYYY-MM-DD";
-    static CASH_OUT_WEEK_LIMIT = 1000;
-    static CASH_IN_COMMISSION = 0.03;
-    static CASH_OUT_COMMISSION = 0.3;
-    static MAX_CASH_IN_COMMISSION = 5;
-    static LEGAL_PERSON_MIN_COMMISSION = 0.5;
-    static USER_TYPES = {
-        NATURAL: "nartural",
-        JURIDICAL: "juridical"
-    };
-    static TRANSFER_TYPES = {
-        CASH_IN: "cash_in",
-        CASH_OUT: "cash_out"
-    };
+    static CASH_IN_CONFIG_API = 'http://private-38e18c-uzduotis.apiary-mock.com/config/cash-in';
+    static CASH_OUT_JURIDICAL_CONFIG_API = 'http://private-38e18c-uzduotis.apiary-mock.com/config/cash-out/juridical';
+    static CASH_OUT_NATURAL_CONFIG_API = 'http://private-38e18c-uzduotis.apiary-mock.com/config/cash-out/natural';
+    static DATE_FORMAT = 'YYYY-MM-DD';
+    static NATURAL = 'natural';
+    static JURIDICAL = 'juridical';
+    static CASH_IN = 'cash_in';
+    static CASH_OUT = 'cash_out';
 }
 
 module.exports = Constants;

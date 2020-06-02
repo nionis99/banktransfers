@@ -1,19 +1,19 @@
-const Calculations = require('./calculations');
 const {financialCeiling} = require('./utils/financial');
-const InOut = require('./utils/InOut');
-
-let transfers;
+const {getData, printNoDataFile, printData} = require('./utils/dataAccess');
+const Config = require('./config/Config');
+const Commission = require('./actions/Commission');
 const dataFile = process.argv[2];
 
-const getAllCommissions = (dataFile) => {
-    transfers = InOut.getData(dataFile);
-    Calculations.calculateTransfersCommmissions(transfers);
-    financialCeiling(Calculations.commissions);
-    InOut.printData(Calculations.commissions);
+const getAllCommissions = async (dataFile) => {
+    const transfers = getData(dataFile);
+    const config = new Config();
+    await config.requestConfig();
+    const commission = new Commission(config);
+    await commission.calculate(transfers);
+    financialCeiling(commission.allCommissions);
+    printData(commission.allCommissions);
 }
 
-const appInit = () => dataFile ? getAllCommissions(dataFile) : InOut.printNoDataFile()
+const appInit = () => dataFile ? getAllCommissions(dataFile) : printNoDataFile()
 
 appInit();
-
-module.exports = getAllCommissions;

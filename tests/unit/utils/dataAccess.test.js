@@ -1,13 +1,13 @@
-const InOut = require('../../utils/InOut');
+const {getData} = require('../../../utils/dataAccess');
 const fs = require('fs');
 
 const input = 'testInput.json';
 let transfers;
 
-describe('InOut util', () => {
+describe('dataAccess util', () => {
 
     beforeEach(() => {
-        transfers = InOut.getData(input);
+        transfers = getData(input);
     });
 
     it('reads data file', () => {

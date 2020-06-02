@@ -4,5 +4,7 @@ const Constants = require('../constants');
 const getWeekNumber = date => moment(date, Constants.DATE_FORMAT).isoWeek();
 const getYearNumber = date => moment(date, Constants.DATE_FORMAT).isoWeekYear();
 
-exports.checkDate = (firstDate, secondDate) => getYearNumber(firstDate) === getYearNumber(secondDate)
+const checkDate = (firstDate, secondDate) => getYearNumber(firstDate) === getYearNumber(secondDate)
     && getWeekNumber(firstDate) === getWeekNumber(secondDate);
+
+module.exports = checkDate;

@@ -1,4 +1,4 @@
-const {getCommission, financialCeiling} = require('../../utils/financial');
+const {getCommission, financialCeiling} = require('../../../utils/financial');
 
 describe('financial functions', () => {
 
@@ -11,8 +11,8 @@ describe('financial functions', () => {
     });
 
     it('returns ceiled numbers', () => {
-        const testArray = ['2.112', '0.000000001', '9.9101'];
-        const expectedResult = ['2.12', '0.01', '9.92'];
+        const testArray = ['2.112', '0.000000001', '9.9101', '0.023'];
+        const expectedResult = ['2.12', '0.01', '9.92', '0.03'];
         financialCeiling(testArray);
         expect(testArray).toEqual(expectedResult);
     })

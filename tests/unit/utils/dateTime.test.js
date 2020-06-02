@@ -1,4 +1,4 @@
-const {checkDate} = require('../../utils/dateTime');
+const checkDate = require('../../../utils/dateTime');
 
 let firstDate;
 let secondDate;
@@ -14,7 +14,7 @@ describe('dateTime functions', () => {
         expect(actualResult).toEqual(expectedResult);
     });
 
-    it('returns true then dates equal', () => {
+    it('returns false then dates not equal', () => {
         firstDate = '2017-06-12';
         secondDate = '2018-05-15';
         expectedResult = false;
